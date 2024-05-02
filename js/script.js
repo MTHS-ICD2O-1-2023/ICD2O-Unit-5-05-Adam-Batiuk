@@ -1,5 +1,27 @@
-// Copyright (c) 2020 Mr. Coxall All rights reserved
+// Copyright (c) 2024 Mr. Adam Batiuk All rights reserved
 //
-// Created by: Mr. Coxall
-// Created on: Sep 2020
+// Created by: Adam Batiuk
+// Created on: Mar 2024
 // This file contains the JS functions for index.html
+"use strict"
+
+function myButtonClicked() {
+  // get inputs
+  const lengthA = parseInt(document.getElementById("side-a").value)
+  const lengthB = parseInt(document.getElementById("side-b").value)
+  const lengthC = parseInt(document.getElementById("side-c").value)
+
+  // using the cosine law
+  const angleA = Math.acos((lengthB ** 2 + lengthC ** 2 - lengthA ** 2) / (2 * lengthB * lengthC)) * (180 / Math.PI)
+  const angleB = Math.acos((lengthC ** 2 + lengthA ** 2 - lengthB ** 2) / (2 * lengthC * lengthA)) * (180 / Math.PI)
+  const angleC = Math.acos((lengthA ** 2 + lengthB ** 2 - lengthC ** 2) / (2 * lengthA * lengthB)) * (180 / Math.PI)
+
+  const sumOfAngles = Number((angleA).toFixed(2)) + Number((angleB).toFixed(2)) + Number((angleC).toFixed(2))
+  if (sumOfAngles != 180) {
+    document.getElementById("answer").innerHTML = "These inputs do not make a triangle."
+  }
+  // determen type
+  if (((angleA == angleC) && (angleA != angleB)) || ((angleA == angleB) && (angleA != angleC)) || ((angleB == angleC) && (angleB != angleA))) {
+    document.getElementById("answer").innerHTML = "test"
+  }
+}
