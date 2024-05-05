@@ -16,11 +16,13 @@ function myButtonClicked() {
   const angleB = Math.acos((lengthC ** 2 + lengthA ** 2 - lengthB ** 2) / (2 * lengthC * lengthA)) * (180 / Math.PI)
   const angleC = Math.acos((lengthA ** 2 + lengthB ** 2 - lengthC ** 2) / (2 * lengthA * lengthB)) * (180 / Math.PI)
   
-  //console.log("angleA,B,C  " + angleA + "  " + angleB + "  " + angleC)
+  console.log("angleA,B,C  " + angleA + "  " + angleB + "  " + angleC)
 
-  const sumOfAngles = Number((angleA).toFixed(2)) + Number((angleB).toFixed(2)) + Number((angleC).toFixed(2))
+  const sumOfAngles = Number( angleA + angleB + angleC).toFixed(2)
   
-  //console.log("Sum of angles  " + sumOfAngles)
+  console.log("Sum of angles  " + sumOfAngles)
+
+  // determine triangle type
   if (sumOfAngles != 180) {
     document.getElementById("answer").innerHTML = "These inputs do not make a triangle."
   } else if (((angleA == angleC) && (angleA != angleB)) || ((angleA == angleB) && (angleA != angleC)) || ((angleB == angleC) && (angleB != angleA))) {
