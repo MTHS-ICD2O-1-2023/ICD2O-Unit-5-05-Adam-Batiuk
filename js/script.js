@@ -15,12 +15,8 @@ function myButtonClicked() {
   const angleA = Math.acos((lengthB ** 2 + lengthC ** 2 - lengthA ** 2) / (2 * lengthB * lengthC)) * (180 / Math.PI)
   const angleB = Math.acos((lengthC ** 2 + lengthA ** 2 - lengthB ** 2) / (2 * lengthC * lengthA)) * (180 / Math.PI)
   const angleC = Math.acos((lengthA ** 2 + lengthB ** 2 - lengthC ** 2) / (2 * lengthA * lengthB)) * (180 / Math.PI)
-  
-  console.log("angleA,B,C  " + angleA + "  " + angleB + "  " + angleC)
 
-  const sumOfAngles = Number( angleA + angleB + angleC).toFixed(2)
-  
-  console.log("Sum of angles  " + sumOfAngles)
+  const sumOfAngles = Number(angleA + angleB + angleC).toFixed(2)
 
   // determine triangle type
   if (sumOfAngles != 180) {
